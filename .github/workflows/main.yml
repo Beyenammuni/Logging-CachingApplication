@@ -1,25 +1,37 @@
 name: .NET CI
 
-  on:
-     push:
-       branches:
-         - master
-    pull-request:
-       branches:
-          - master
-      
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - uses: actions/checkout@v4.2
-   
-      - name: Restore
+      - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0'  # Specify your target .NET version
+      
+      - name: Restore dependencies
         run: dotnet restore
-
+      
       - name: Build
-        run: dotnet build --no-restore
-
+        run: dotnet build --no-restore --configuration Release
+      
       - name: Test
-        run: dotnet test --no-build
+        run: dotnet test --no-build --configuration Release --verbosity normal --logger "trx;LogFileName=test-results.trx"
+      
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: '**/test-results.trx'
