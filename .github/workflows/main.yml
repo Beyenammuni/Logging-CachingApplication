@@ -1,11 +1,12 @@
 name: .NET CI
 
-on:
-  push:
-    branches:
-      - master
-   pull-request:
-      - master
+  on:
+     push:
+       branches:
+         - master
+    pull-request:
+       branches:
+          - master
       
 jobs:
   build:
