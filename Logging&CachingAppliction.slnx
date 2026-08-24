@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Logging&amp;CachingAppliction/Logging&amp;CachingAppliction.csproj" />
+  <Project Path="Logging&amp;CachingApplication/Logging&amp;CachingApplication.csproj" Id="27263a6e-39ac-45ab-9150-d87074ebf2bf" />
+  <Project Path="Logging&amp;CachingAppliction/Logging&amp;CachingApi.csproj" />
+  <Project Path="Logging&amp;CachingDomain/Logging&amp;CachingDomain.csproj" Id="fa3742d1-f778-4287-b4a7-e67d6abbb3ca" />
+  <Project Path="Logging&amp;CachingInfrastructure/Logging&amp;CachingInfrastructure.csproj" Id="8ff70370-99c3-4801-bfb3-dd83356a234f" />
 </Solution>
