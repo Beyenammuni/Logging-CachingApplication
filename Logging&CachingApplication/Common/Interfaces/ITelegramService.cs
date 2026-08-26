@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Logging_CachingApplication.Common.Interfaces
 {
-    internal class ICacheService
+    public interface ITelegramService
     {
+        Task SendMessageAsync(string message, CancellationToken cancellationToken);
     }
 }

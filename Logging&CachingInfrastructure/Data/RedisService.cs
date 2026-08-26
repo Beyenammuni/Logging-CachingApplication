@@ -89,7 +89,5 @@ namespace Logging_CachingInfrastructure.Data
         {
             return await _database.StringIncrementAsync(value);
         }
-
-      
     }
 }
